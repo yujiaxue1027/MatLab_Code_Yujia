@@ -150,11 +150,12 @@ while iter < maxiter
    
    % save intermediate results
    if mod(iter, img_save_period) == 0
-       for img_idx = 1:layers
-           img2save = xt(:,:,img_idx);
-           imwrite(uint8(255*linear_normalize(img2save)),...
-               [img_save_path,'_iter_',num2str(iter),'_slice_',num2str(img_idx),'.png']);
-       end
+       % for img_idx = 1:layers
+       %     img2save = xt(:,:,img_idx);
+       %     imwrite(uint8(255*linear_normalize(img2save)),...
+       %         [img_save_path,'_iter_',num2str(iter),'_slice_',num2str(img_idx),'.png']);
+       % end
+       write_mat_to_tif(linear_normalize(xt),[img_save_path,'_iter_',num2str(iter),'.tif']);
    end
 
    

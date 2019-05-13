@@ -1,5 +1,5 @@
 % save 3D mat as tiff file wihtout compression
-function write_mat_to_tiff(mat,filename)
+function write_mat_to_tif(mat,filename)
 
 % save angiogram segmentation as multi-image tiff file
 imwrite(mat(:,:,1),filename,'compression','none');
