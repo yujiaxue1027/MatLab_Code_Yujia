@@ -1,0 +1,15 @@
+ 	       mu1: 5
+               mu2: 0.2000
+               mu3: 1
+               mu4: 0.2000
+             color: 'gray'
+           maxiter: 30
+          clip_min: 0
+          clip_max: 0.0050
+          tv_thres: 5.0000e-04
+          l1_thres: 5.0000e-04
+    M_dagger_thres: 50
+
+
+
+tv thres: 0.5~1 * 1e-3

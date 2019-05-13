@@ -1,0 +1,2 @@
+for y1 use psf 13
+for resolution target use psf 15

@@ -1,0 +1,4 @@
+gfp y1 7
+tissue y2 10
+tissue_s y3 12
+target y4 11

@@ -1,0 +1,22 @@
+SYSTEM REQUIREMENTS:
+- Supplementary software published online with Prevedel et al., 
+Simultaneous whole-animal 3D imaging of neuronal activity using light-field microscopy, 
+Nature Methods 11, 727-730 (2014), doi:10.1038/nmeth.2964. 
+Download link: http://www.nature.com/nmeth/journal/v11/n7/extref/nmeth.2964-S2.zip
+
+- Matlab base
+- Matlab Parallel compute toolbox
+- Matlab Image processing toolbox
+- Matlab Signal processing toolbox
+- Matlab Statistics and machine learning toolbox
+Tested with Matlab release 2016b on Red Hat Enterprise Linux 6. 
+
+
+
+
+INSTALLATION:
+- Download and extract supplementary software zip file
+- Add extracted folder to Matlab path
+- Download and extract supplementary software from Prevedel 2014 (see link above)
+- Add extracted Prevedel 2014 supplementary software folder and subfolders to Matlab path
+- Adapt parameters in main_extraction.m, and execute.

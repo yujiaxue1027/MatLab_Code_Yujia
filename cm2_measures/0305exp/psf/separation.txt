@@ -1,0 +1,6 @@
+GFP 797
+tissue 782
+small tissue 764
+target 774
+
+-0.5:+1.5

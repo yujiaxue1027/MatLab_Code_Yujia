@@ -1,0 +1,83 @@
+
+*.zip
+*.tif
+*.png
+*.mat
+*.jpg
+*.bmp
+*.fig
+*.pgm
+*.gif
+ek381hw11/ek381_classification/average_pet.m
+ek381hw11/ek381_classification/calculate_accuracy.m
+ek381hw11/ek381_classification/closest_average.m
+ek381hw11/ek381_classification/ek381hw9/0. Scores.txt
+ek381hw11/ek381_classification/ek381hw9/19Spring/Joshua Bone/JoshNeuralNet/deepLearningScript.m
+ek381hw11/ek381_classification/ek381hw9/19Spring/Joshua Bone/JoshNeuralNet/NeuralClassifier.m
+ek381hw11/ek381_classification/ek381hw9/19Spring/Joshua Bone/JoshNeuralNet/README.txt
+ek381hw11/ek381_classification/ek381hw9/19Spring/Luisa Watkins/hw11extracredit.m
+ek381hw11/ek381_classification/ek381hw9/19Spring/Peter Hanna/Peter_Hanna_EK381_Optional Question/calculate_accuracy.m
+ek381hw11/ek381_classification/ek381hw9/19Spring/Peter Hanna/Peter_Hanna_EK381_Optional Question/EK381HW11optional.m
+ek381hw11/ek381_classification/ek381hw9/19Spring/Peter Hanna/Peter_Hanna_EK381_Optional Question/pet_classifier.m
+ek381hw11/ek381_classification/ek381hw9/19Spring/Peter Hanna/Peter_Hanna_EK381_Optional Question/read_data.m
+ek381hw11/ek381_classification/ek381hw9/19Spring/Peter Hanna/Peter_Hanna_EK381_Optional Question/README.txt
+ek381hw11/ek381_classification/ek381hw9/19Spring/Peter Hanna/Peter_Hanna_EK381_Optional Question/split_data.m
+ek381hw11/ek381_classification/ek381hw9/archived_18Fall/Addison Dolido - EK381 Competition/calculate_accuracy.m
+ek381hw11/ek381_classification/ek381hw9/archived_18Fall/Addison Dolido - EK381 Competition/forward_prop_sig.m
+ek381hw11/ek381_classification/ek381hw9/archived_18Fall/Addison Dolido - EK381 Competition/guess.m
+ek381hw11/ek381_classification/ek381hw9/archived_18Fall/Addison Dolido - EK381 Competition/pet_classifier.m
+ek381hw11/ek381_classification/ek381hw9/archived_18Fall/Addison Dolido - EK381 Competition/pet_classifier_no_accuracy.m
+ek381hw11/ek381_classification/ek381hw9/archived_18Fall/Addison Dolido - EK381 Competition/README.txt
+ek381hw11/ek381_classification/ek381hw9/archived_18Fall/Bachrach_HW9/custom.m
+ek381hw11/ek381_classification/ek381hw9/archived_18Fall/Bachrach_HW9/customTWO.m
+ek381hw11/ek381_classification/ek381hw9/archived_18Fall/Bachrach_HW9/README.txt
+ek381hw11/ek381_classification/ek381hw9/archived_18Fall/Maas, Amanda_HW_9/pet_classifier.m
+ek381hw11/ek381_classification/ek381hw9/archived_18Fall/Maas, Amanda_HW_9/READ_ME.txt
+ek381hw11/ek381_classification/ek381hw9/archived_18Fall/RyanEwing/pet_classifier.m
+ek381hw11/ek381_classification/ek381hw9/archived_18Fall/RyanEwing/README
+ek381hw11/ek381_classification/ek381hw9/archived_18Fall/RyanEwing/train_classifier.m
+ek381hw11/ek381_classification/ek381hw9/archived_18Fall/Varun_Lalwani_Homework_9/varunl_homework_9/pet_classifier.m
+ek381hw11/ek381_classification/ek381hw9/archived_18Fall/Varun_Lalwani_Homework_9/varunl_homework_9/README.txt.rtf
+ek381hw11/ek381_classification/ek381hw9/archived_18Fall/YanYan_Huang_optcode/calculate_accuracy.m
+ek381hw11/ek381_classification/ek381hw9/archived_18Fall/YanYan_Huang_optcode/dogsfolder/.DS_Store
+ek381hw11/ek381_classification/ek381hw9/archived_18Fall/YanYan_Huang_optcode/main.m
+ek381hw11/ek381_classification/ek381hw9/archived_18Fall/YanYan_Huang_optcode/pet_classifier.m
+ek381hw11/ek381_classification/ek381hw9/archived_18Fall/YanYan_Huang_optcode/read_data.m
+ek381hw11/ek381_classification/ek381hw9/archived_18Fall/YanYan_Huang_optcode/README.txt
+ek381hw11/ek381_classification/ek381hw9/EK381_HW9_optional_challenge.xlsx
+ek381hw11/ek381_classification/ek381hw9/holdout_data/read_data_holdout.m
+ek381hw11/ek381_classification/hw9runall.m
+ek381hw11/ek381_classification/linear_regression.m
+ek381hw11/ek381_classification/nearest_neighbor.m
+ek381hw11/ek381_classification/pca_regression.m
+ek381hw11/ek381_classification/read_data.m
+ek381hw11/ek381_classification/show_image.m
+ek381hw11/ek381_classification/split_data.m
+ek381hw11/ek381_classification/tmp_average.m
+WindSTORM_GPU/WindSTORM_GPU/EPFL_Microtubule_Alexa647.raw
+WindSTORM_GPU/WindSTORM_GPU/EPFL_Microtubule_Alexa647.raw_WindSTORM.csv
+WindSTORM_GPU/WindSTORM_GPU/README_WindSTORM_GPU.docx
+WindSTORM_GPU/WindSTORM_GPU/WindSTORM.exe
+WindSTORM_GPU/WindSTORM_GPU/WindSTORM_GPU_debug.exe
+WindSTORM_GPU/WindSTORM_GPU/WindSTORM_setup.txt
+WindSTORM_MATLAB/WindSTORM_MATLAB/EPFL_Microtubule_Alexa647_WindSTORM.csv
+WindSTORM_MATLAB/WindSTORM_MATLAB/functions/BgSub.m
+WindSTORM_MATLAB/WindSTORM_MATLAB/functions/BgSub_low.m
+WindSTORM_MATLAB/WindSTORM_MATLAB/functions/ExtractROIs.m
+WindSTORM_MATLAB/WindSTORM_MATLAB/functions/FRC_stack.m
+WindSTORM_MATLAB/WindSTORM_MATLAB/functions/GradientFit.m
+WindSTORM_MATLAB/WindSTORM_MATLAB/functions/ImageRead.m
+WindSTORM_MATLAB/WindSTORM_MATLAB/functions/quick_test_on_cm2.m
+WindSTORM_MATLAB/WindSTORM_MATLAB/functions/WindDeconv.m
+WindSTORM_MATLAB/WindSTORM_MATLAB/README_WindSTORM_MATLAB.docx
+WindSTORM_MATLAB/WindSTORM_MATLAB/WindSTORM.m
+*.rar
+*.mp4
+*.pptx
+*.xlsx
+*.html
+*.tiff
+*.avi
+cm2_measures/DiffuserCam-master/DiffuserCam-master/README.md
+cm2_measures/DiffuserCam-master/DiffuserCam-master/LICENSE
+*.7z

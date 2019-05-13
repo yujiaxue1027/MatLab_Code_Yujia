@@ -1,0 +1,10 @@
+5 um pinhole
+gain 0db
+exposure 15ms
+brightness 0
+LED power 2 level
+
+
+
+when using 10um pinhole
+exposure 10ms
