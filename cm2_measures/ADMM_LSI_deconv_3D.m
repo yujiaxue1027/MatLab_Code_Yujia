@@ -16,6 +16,8 @@ mu4 = para.mu4;
 tau_l1 = para.tau_l1;
 tau_tv = para.tau_tv;
 maxiter = para.maxiter;
+termination_ratio = para.termination_ratio;
+plateau_tolerence = para.plateau_tolerence;
 color = para.color;
 clip_min = para.clip_min;
 clip_max = para.clip_max;
@@ -83,7 +85,9 @@ if para.display_flag
     f1 = figure('rend','painters','pos',[50 50 1500 900]);
 end
 
-while iter < maxiter
+next_iteration = 1;
+num_plateaus = 0;
+while next_iteration
    iter = iter + 1;
    Hxt = Hxtp;
    vtp = v_mask.*(mu1*Hxt + gamma1 + CTy);
@@ -144,9 +148,35 @@ while iter < maxiter
    primal_residual_mu4 = norm(VEC(xtp-ztp));
    dual_residual_mu4 = mu4*norm(VEC(xt - xtp));
    [mu4, mu4_update] = ADMM_update_param(mu4,rtol,mu_ratio,primal_residual_mu4,dual_residual_mu4);
-    
-   xt = xtp;  
-   disp(['iteration: ',num2str(iter)]);
+   
+   %Update filters
+   if mu1_update || mu2_update || mu3_update || mu4_update
+       mu_update = 1;
+   else
+       mu_update = 0;
+   end
+   
+   %check termination condition: 1)consecutive plateaus AND 2)mu not updated
+   xt_last = xt;
+   xt = xtp;
+   evolution_ratio_of_the_iteration = compute_evolution_ratio(xt, xt_last);
+   if (evolution_ratio_of_the_iteration <= termination_ratio) && (mu_update == 0)
+       num_plateaus = num_plateaus + 1;
+   else
+       num_plateaus = 0;
+   end
+   
+   if num_plateaus >= plateau_tolerence
+       next_iteration = 0;
+   end
+   
+   disp(['iteration: ',num2str(iter), ', evo ratio: ', num2str(evolution_ratio_of_the_iteration),', consecutive plateaus: ',num2str(num_plateaus)]);
+   if next_iteration
+      disp('continue next iteration...'); 
+   else
+      disp('terminating...');
+      write_mat_to_tif(uint8(255*linear_normalize(xt)),[img_save_path,'_final_iter_',num2str(iter),'.tif']);
+   end
    
    % save intermediate results
    if mod(iter, img_save_period) == 0
@@ -155,24 +185,16 @@ while iter < maxiter
        %     imwrite(uint8(255*linear_normalize(img2save)),...
        %         [img_save_path,'_iter_',num2str(iter),'_slice_',num2str(img_idx),'.png']);
        % end
-       write_mat_to_tif(linear_normalize(xt),[img_save_path,'_iter_',num2str(iter),'.tif']);
+       write_mat_to_tif(uint8(255*linear_normalize(xt)),[img_save_path,'_iter_',num2str(iter),'.tif']);
    end
 
+   if mu_update
+       disp(['mu updated. mu1: ',num2str(round(mu1,3)), ', mu2: ',num2str(round(mu2,3)),...
+           ', mu3: ',num2str(round(mu3,3)), ', mu4: ',num2str(round(mu4,3))]);
+       x_mask = 1./(mu1*HTH + mu2*PsiTPsi + mu3 + mu4);  %Denominator of x update (diagonized in FFT domain)
+       v_mask = 1./(CT3D(ones(size(y)),layers) + mu1); %Denominator of v update (itself is diagonized)
+   end
    
-   %Update filters
-    if mu1_update || mu2_update || mu3_update || mu4_update
-        mu_update = 1;
-    else
-        mu_update = 0;
-    end
-    
-    if mu_update
-        disp(['mu updated. mu1: ',num2str(round(mu1,3)), ', mu2: ',num2str(round(mu2,3)),...
-            ', mu3: ',num2str(round(mu3,3)), ', mu4: ',num2str(round(mu4,3))]);
-        x_mask = 1./(mu1*HTH + mu2*PsiTPsi + mu3 + mu4);  %Denominator of x update (diagonized in FFT domain)
-        v_mask = 1./(CT3D(ones(size(y)),layers) + mu1); %Denominator of v update (itself is diagonized)
-
-    end
    if para.display_flag
        % display and evaluate
 %        img2display = sum(xt,3);
@@ -332,4 +354,8 @@ function output = conv3d(obj,psf)
     F3D = @(x) fftshift(fftn(ifftshift(x)));
     Ft3D = @(x) fftshift(ifftn(ifftshift(x)));
     output = crop3d(real(Ft3D(F3D(pad3d(obj)).*F3D(pad3d(psf)))));
+end
+
+function evolution_ratio = compute_evolution_ratio(xt,xtm1)
+    evolution_ratio = norm(xt(:) - xtm1(:)) / norm(xtm1(:));
 end

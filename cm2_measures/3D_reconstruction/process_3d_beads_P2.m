@@ -17,9 +17,10 @@ linear_normalize = @(x) (x - min(x(:)))./(max(x(:))-min(x(:)));
 %% read in images
 rows = 1944;
 cols = 2592;
-y_0 = im2double(imread('10_25_D0508.tif'));
+y_0 = im2double(imread('15_25_T2.tif'));
 
-y = bg_removal(y_0, 32); 
+y = bg_removal(y_0, 256); 
+y = linear_normalize(y);
 
 %% load in all PSFs
 num_psf = 701;
