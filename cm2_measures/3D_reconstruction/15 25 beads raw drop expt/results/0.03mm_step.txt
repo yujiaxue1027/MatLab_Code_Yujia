@@ -1,0 +1,4 @@
+thickness of each slice (z stepsize) == 0.03 mm
+total depth variation = 0.03 * 32 ~ 1mm
+
+pitch size of reconstruction is 4.88um per pixel

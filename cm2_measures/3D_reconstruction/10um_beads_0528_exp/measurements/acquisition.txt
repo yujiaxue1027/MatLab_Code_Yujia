@@ -1,0 +1,3 @@
+300ms exp
+18db gain
+slide:10um528, 10um face up, the right drop (middle of the slide)

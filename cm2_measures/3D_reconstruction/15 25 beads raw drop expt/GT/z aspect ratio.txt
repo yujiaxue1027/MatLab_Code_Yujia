@@ -1,0 +1,8 @@
+for 2X
+z ratio = 0.1mm / 3.25um = 30.7
+
+for 10x
+z ratio = 0.05mm / 0.65um = 76.9
+
+for reconstruction with 0.03mm stepsize  (reconstruction pitch size = 4.88um)
+z ratio = 0.03mm / 4.88um = 6.1

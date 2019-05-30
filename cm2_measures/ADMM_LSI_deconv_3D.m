@@ -15,7 +15,7 @@ mu3 = para.mu3;
 mu4 = para.mu4;
 tau_l1 = para.tau_l1;
 tau_tv = para.tau_tv;
-% maxiter = para.maxiter;
+maxiter = para.maxiter;
 termination_ratio = para.termination_ratio;
 plateau_tolerence = para.plateau_tolerence;
 color = para.color;
@@ -87,7 +87,7 @@ end
 
 next_iteration = 1;
 num_plateaus = 0;
-while next_iteration
+while (next_iteration) && (iter <= maxiter) 
    iter = iter + 1;
    Hxt = Hxtp;
    vtp = v_mask.*(mu1*Hxt + gamma1 + CTy);
